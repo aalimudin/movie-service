@@ -1,0 +1,8 @@
+application:
+    port: "9010"
+    db: 
+        url: "user=aalimudin password=password host=localhost port=5433 dbname=movie_database sslmode=disable TimeZone=Asia/Jakarta"
+    
+omdb:
+    key: "faf7e5bb&s"
+    url: "http://www.omdbapi.com/"

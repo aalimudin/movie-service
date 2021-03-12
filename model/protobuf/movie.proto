@@ -1,0 +1,67 @@
+syntax = "proto3";
+package movie;
+
+message MovieSearchList {
+  repeated MovieList Search = 1;
+  string TotalResults = 2;
+  string Response = 3;
+}
+
+message MovieList {
+    string Title = 1;
+    string Year = 2;
+    string imdbID = 3;
+    string Type = 4;
+    string Poster = 5;
+}
+
+message MovieDetail {
+    string Title = 1;
+	string Year = 2;
+	string Rated = 3;
+	string Released = 4;
+	string Runtime = 5;
+	string Genre = 6;
+	string Director = 7;
+	string Writer = 8;
+	string Actors = 9;
+	string Plot = 10;
+	string Language = 11;
+	string Country = 12;
+	string Awards = 13;
+	string Poster = 14;
+	repeated Rating Ratings = 15;
+	string Metascore = 16;
+	string imdbRating = 17;
+	string imdbVotes = 18;
+	string imdbID = 19;
+	string Type = 20;
+	string DVD = 21;
+	string BoxOffice = 22;
+	string Production = 23;
+	string Website = 24;
+	string Response = 25;
+}
+
+message Rating {
+	string Source = 1;
+	string Value = 2;
+}
+
+message MovieListParam {
+    string Keyword = 1;
+    string Page = 2;
+}
+
+message MovieDetailParam {
+  string Title = 1;
+}
+
+service MovieService {
+  rpc GetMovieList(MovieListParam) returns (MovieSearchList) {}
+  rpc GetMovieDetail(MovieDetailParam) returns (MovieDetail) {}
+}
+
+
+
+	
